@@ -1,5 +1,7 @@
+import { useContext } from "react";
 import { useParams } from "react-router";
 import { useLoaderData } from "react-router";
+import { TimelineContext } from "../context/TimelineContext";
 
 export default function FriendDetails() {
   //Getting the friend data to show in details
@@ -19,12 +21,18 @@ export default function FriendDetails() {
     next_due_date = "2026-03-30",
   } = friendToShow;
 
+  // To add data in the Timeline page
+  const [, handleAddTimeline] = useContext(TimelineContext);
+
   return (
     <section className="">
       <div className="cssContainer">
         <h1 className="">hi, from friend details</h1>
         <h2 className="text-red-500">{name}</h2>
         <p className="text-amber-400-500">{bio} </p>
+        <button className="btn" onClick={() => handleAddTimeline({ id, name })}>
+          add to timeline
+        </button>
       </div>
     </section>
   );

@@ -3,7 +3,6 @@ import { useLoaderData } from "react-router";
 
 export default function Home() {
   const friendData = useLoaderData();
-  console.log(friendData);
 
   return (
     <section className="">
@@ -17,7 +16,10 @@ export default function Home() {
           {/* Cards*/}
 
           {friendData.map((friend) => (
-            <div className="bg-white rounded-xl border border-gray-400 p-6 space-y-4">
+            <div
+              key={friend.id}
+              className="bg-white rounded-xl border border-gray-400 p-6 space-y-4"
+            >
               <h3 className="font-semi-bold text-center">{friend.name}</h3>
               <NavLink to={`/friend/${friend.id}`} className="btn">
                 click to see details.
