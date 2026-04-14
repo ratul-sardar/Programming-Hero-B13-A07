@@ -6,8 +6,8 @@ KeenKeeper is a responsive web application designed to help users maintain meani
 
 # 🚀 Live Project
 
-🔗 deployed link will be here
-🔗 GitHub repository link will be here
+🔗 Deployed link: https://programming-hero-b13-a07.vercel.app/
+🔗 GitHub repository link: https://github.com/ratul-sardar/Programming-Hero-B13-A07.git
 
 # 🛠️ Technologies Used
 
