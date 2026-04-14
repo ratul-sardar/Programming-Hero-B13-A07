@@ -30,7 +30,15 @@ export default function FriendDetails() {
         <h1 className="">hi, from friend details</h1>
         <h2 className="text-red-500">{name}</h2>
         <p className="text-amber-400-500">{bio} </p>
-        <button className="btn" onClick={() => handleAddTimeline({ id, name })}>
+        <button
+          className="btn"
+          onClick={() =>
+            handleAddTimeline(
+              { id, name, time: new Date().toDateString() },
+              `Sent text to ${name}`,
+            )
+          }
+        >
           add to timeline
         </button>
       </div>

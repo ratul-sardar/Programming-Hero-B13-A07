@@ -8,9 +8,9 @@ export default function TimelineContextProvider({ children }) {
   // Timeline list
   const [timeLine, setTimeLine] = useState([]);
   // Function to add more data in timeline
-  function handleAddTimeline(newData) {
+  function handleAddTimeline(newData, msg) {
     setTimeLine([...timeLine, newData]);
-    toast.success("🦄 Wow so easy!", {
+    toast.success(`${msg}`, {
       position: "top-center",
       autoClose: 5000,
       hideProgressBar: false,
