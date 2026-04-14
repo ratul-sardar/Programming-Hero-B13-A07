@@ -5,10 +5,13 @@ import { FaChartLine } from "react-icons/fa6";
 import { RiMenu3Fill } from "react-icons/ri";
 import { IoMdClose } from "react-icons/io";
 import siteLogo from "../../../assets/logo.png";
+import { useState } from "react";
 
 export default function Navbar() {
+  const [showMobileNav, setShowMobileNav] = useState(false);
+
   return (
-    <nav className="cssContainer p-0  flex-row justify-between">
+    <nav className="relative z-20 cssContainer py-4  flex-row justify-between">
       {/* Site Logo and Mobile Menu*/}
       <div className="w-full flex items-center justify-between">
         <NavLink to="/" className="">
@@ -20,16 +23,25 @@ export default function Navbar() {
         </NavLink>
 
         {/* Mobile menu toggle*/}
-        <button>
-          <RiMenu3Fill />
-          <IoMdClose />
+        <button
+          onClick={() => setShowMobileNav(!showMobileNav)}
+          className=" md:hidden text-[28px] text-brand"
+        >
+          {showMobileNav ? <IoMdClose /> : <RiMenu3Fill />}
         </button>
       </div>
 
       {/* Site Navigations*/}
-      <div id="siteNav" className="hidden md:flex gap-4">
+      <div className="siteNav hidden md:flex gap-4">
         <Navigation />
       </div>
+
+      {/* Mobile Site Navigations*/}
+      {showMobileNav && (
+        <div className="siteNav absolute top-[110%] z-10 w-full p-7 bg-white rounded-2xl border border-gray-300 flex flex-col gap-4">
+          <Navigation />
+        </div>
+      )}
     </nav>
   );
 }

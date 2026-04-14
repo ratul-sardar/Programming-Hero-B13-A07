@@ -4,7 +4,7 @@ import Navbar from "../ui/Navbar/Navbar";
 export default function Root() {
   return (
     <>
-      <header className="sticky top-0 bg-white py-4 border-b border-gray-300">
+      <header className="sticky top-0 z-50 bg-white border-b border-gray-300">
         <Navbar></Navbar>
       </header>
       <main>
