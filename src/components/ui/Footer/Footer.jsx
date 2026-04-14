@@ -43,9 +43,15 @@ export default function Footer() {
             <p className="text-xl">Social Links</p>
             {/* Links*/}
             <div className="flex item-center justify-center gap-3">
-              <img src={instagramLogo} alt="" className="" />
-              <img src={facebookLogo} alt="" className="" />
-              <img src={twitterLogo} alt="" className="" />
+              <a href="https://www.instagram.com" target="_blank" className="">
+                <img src={instagramLogo} alt="" className="" />
+              </a>
+              <a href="https://www.facebook.com" target="_blank" className="">
+                <img src={facebookLogo} alt="" className="" />
+              </a>
+              <a href="https://www.twitter.com" target="_blank" className="">
+                <img src={twitterLogo} alt="" className="" />
+              </a>
             </div>
           </div>
         </div>
