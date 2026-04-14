@@ -1,5 +1,6 @@
 import { Outlet } from "react-router";
 import Navbar from "../ui/Navbar/Navbar";
+import Footer from "../ui/Footer/Footer";
 
 export default function Root() {
   return (
@@ -10,7 +11,9 @@ export default function Root() {
       <main>
         <Outlet></Outlet>
       </main>
-      <footer>hi, from footer</footer>
+      <footer>
+        <Footer></Footer>
+      </footer>
     </>
   );
 }
