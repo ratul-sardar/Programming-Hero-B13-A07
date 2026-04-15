@@ -11,9 +11,7 @@ export default function Home() {
       <div className="cssContainer">
         {/* Top Panel*/}
         <header className="text-center text-brand ">
-          <h1 className="mb-4 text-4xl md:text-5xl font-bold">
-            Friends to keep close in your life
-          </h1>
+          <h1 className="mb-4 ">Friends to keep close in your life</h1>
           <p className="mb-8 mx-auto max-w-130 ">
             Your personal shelf of meaningful connections. Browse, tend, and
             nurture the relationships that matter most.
