@@ -1,5 +1,4 @@
 import { Pie, PieChart } from "recharts";
-import { RechartsDevtools } from "@recharts/devtools";
 
 // #region Sample data
 const data = [
@@ -15,9 +14,10 @@ export default function StatusPieChart({ isAnimationActive = true }) {
     <PieChart
       style={{
         width: "100%",
-        maxWidth: "500px",
+        maxWidth: "250px",
         maxHeight: "80vh",
         aspectRatio: 1,
+        margin: "0 auto",
       }}
       responsive
     >
@@ -33,7 +33,6 @@ export default function StatusPieChart({ isAnimationActive = true }) {
         dataKey="value"
         isAnimationActive={isAnimationActive}
       />
-      <RechartsDevtools />
     </PieChart>
   );
 }

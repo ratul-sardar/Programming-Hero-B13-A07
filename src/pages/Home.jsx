@@ -2,9 +2,20 @@ import { NavLink } from "react-router";
 import { useLoaderData } from "react-router";
 import { FaPlus } from "react-icons/fa6";
 import StatusCard from "../components/ui/StatusCard/StatusCard";
+import ProfileCard from "../components/ui/ProfileCard/ProfileCard";
 
 export default function Home() {
   const friendData = useLoaderData();
+
+  // <ProfileCard
+  //   avatar={friend.picture}
+  //   title={friend.name}
+  //   sinceContact={friend.days_since_contact}
+  //   tags={friend.tags}
+  //   status={friend.status}
+  //   bio={friend.bio}
+  //   email={friend.email}
+  // ></ProfileCard>
 
   return (
     <section className="">
@@ -30,10 +41,26 @@ export default function Home() {
         <div className="space-y-10">
           {/* Status Cards*/}
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <StatusCard></StatusCard>
-            <StatusCard></StatusCard>
-            <StatusCard></StatusCard>
-            <StatusCard></StatusCard>
+            <StatusCard
+              title={friendData.length}
+              body={"Total Friends"}
+            ></StatusCard>
+            <StatusCard
+              title={
+                friendData.filter((item) => item.status === "on-track").length
+              }
+              body={"On Track"}
+            ></StatusCard>
+            <StatusCard
+              title={
+                friendData.filter((item) => item.status !== "on-track").length
+              }
+              body={"Need Attention"}
+            ></StatusCard>
+            <StatusCard
+              title={12}
+              body={"Interactions This Month"}
+            ></StatusCard>
           </div>
 
           <div className="divider"></div>
@@ -43,15 +70,15 @@ export default function Home() {
             <h3 className="text-2xl font-semibold">Your Friends</h3>
             <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
               {friendData.map((friend) => (
-                <div
-                  key={friend.id}
-                  className="bg-white rounded-xl border border-gray-400 p-6 space-y-4"
-                >
-                  <h3 className="font-semi-bold text-center">{friend.name}</h3>
-                  <NavLink to={`/friend/${friend.id}`} className="btn">
-                    click to see details.
-                  </NavLink>
-                </div>
+                <NavLink key={friend.id} to={`/friend/${friend.id}`}>
+                  <ProfileCard
+                    avatar={friend.picture}
+                    title={friend.name}
+                    sinceContact={friend.days_since_contact}
+                    tags={friend.tags}
+                    status={friend.status}
+                  ></ProfileCard>
+                </NavLink>
               ))}
             </div>
           </div>

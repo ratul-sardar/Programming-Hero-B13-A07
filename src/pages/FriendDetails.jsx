@@ -26,7 +26,7 @@ export default function FriendDetails() {
 
   return (
     <section className="">
-      <div className="cssContainer">
+      <div className="cssContainer max-w-277.5 grid grid-cols-5 grid-row-7 ">
         <h1 className="">hi, from friend details</h1>
         <h2 className="text-red-500">{name}</h2>
         <p className="text-amber-400-500">{bio} </p>
