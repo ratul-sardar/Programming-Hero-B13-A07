@@ -2,6 +2,11 @@ import { useContext } from "react";
 import { useParams } from "react-router";
 import { useLoaderData } from "react-router";
 import { TimelineContext } from "../context/TimelineContext";
+import ProfileCard from "../components/ui/ProfileCard/ProfileCard";
+import { FaBellSlash } from "react-icons/fa6";
+import { FaBoxArchive } from "react-icons/fa6";
+import { MdDeleteOutline } from "react-icons/md";
+import StatusCard from "../components/ui/StatusCard/StatusCard";
 
 export default function FriendDetails() {
   //Getting the friend data to show in details
@@ -26,22 +31,68 @@ export default function FriendDetails() {
 
   return (
     <section className="">
-      <div className="cssContainer max-w-277.5 grid grid-cols-5 grid-row-7 ">
-        <h1 className="">hi, from friend details</h1>
-        <h2 className="text-red-500">{name}</h2>
-        <p className="text-amber-400-500">{bio} </p>
-        <button
-          className="btn"
-          onClick={() =>
-            handleAddTimeline(
-              { id, name, time: new Date().toDateString() },
-              `Sent text to ${name}`,
-            )
-          }
-        >
-          add to timeline
-        </button>
+      <div className="cssContainer max-w-277.5 grid grid-cols-5 gap-6 ">
+        {/* Left Panel*/}
+        <div className="col-span-full md:col-span-2 flex flex-col gap-6">
+          {/* Profile Card*/}
+          <ProfileCard
+            avatar={picture}
+            title={name}
+            tags={tags}
+            status={status}
+            bio={bio}
+            email={email}
+          ></ProfileCard>
+
+          {/* Buttons*/}
+          <button className="btn">
+            <FaBellSlash /> Snooze 2 weeks
+          </button>
+          <button className="btn">
+            <FaBellSlash />
+            <FaBoxArchive /> Archive
+          </button>
+          <button className="btn text-red-500">
+            <FaBellSlash />
+            <MdDeleteOutline /> Delete
+          </button>
+        </div>
+
+        {/* Right Panel*/}
+        <div className="col-span-full md:col-span-3 space-y-6">
+          {/* Status Cards*/}
+          <div className="flex gap-6">
+            <StatusCard></StatusCard>
+            <StatusCard></StatusCard>
+            <StatusCard></StatusCard>
+          </div>
+
+          {/* Relation goal*/}
+          <div className="col-span-3 row-span-2">
+            <StatusCard></StatusCard>
+          </div>
+
+          {/* Quick Check Ins*/}
+          <div className="col-span-3 row-span-3">
+            <StatusCard></StatusCard>
+          </div>
+        </div>
       </div>
     </section>
   );
 }
+
+// <h1 className="">hi, from friend details</h1>
+// <h2 className="text-red-500">{name}</h2>
+// <p className="text-amber-400-500">{bio} </p>
+// <button
+//   className="btn"
+//   onClick={() =>
+//     handleAddTimeline(
+//       { id, name, time: new Date().toDateString() },
+//       `Sent text to ${name}`,
+//     )
+//   }
+// >
+//   add to timeline
+// </button>

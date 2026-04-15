@@ -28,7 +28,10 @@ export default function ProfileCard({
         {/* Card Tags*/}
         <div className="space-x-2">
           {tags.map((tag) => (
-            <div className="badge badge-soft badge-success rounded-full">
+            <div
+              key={tag}
+              className="badge badge-soft badge-success rounded-full"
+            >
               {tag}
             </div>
           ))}

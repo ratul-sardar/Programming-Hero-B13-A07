@@ -7,16 +7,6 @@ import ProfileCard from "../components/ui/ProfileCard/ProfileCard";
 export default function Home() {
   const friendData = useLoaderData();
 
-  // <ProfileCard
-  //   avatar={friend.picture}
-  //   title={friend.name}
-  //   sinceContact={friend.days_since_contact}
-  //   tags={friend.tags}
-  //   status={friend.status}
-  //   bio={friend.bio}
-  //   email={friend.email}
-  // ></ProfileCard>
-
   return (
     <section className="">
       <div className="cssContainer">
