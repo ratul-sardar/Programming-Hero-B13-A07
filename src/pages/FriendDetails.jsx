@@ -31,10 +31,9 @@ export default function FriendDetails() {
 
   return (
     <section className="">
-      <div className="cssContainer max-w-277.5 grid grid-cols-5 gap-6 ">
-        {/* Left Panel*/}
-        <div className="col-span-full md:col-span-2 flex flex-col gap-6">
-          {/* Profile Card*/}
+      <div className="w-11/12 mx-auto max-w-360 py-16 md:py-20 grid grid-cols-5 md:grid-rows-[repeat(7, minmax(1fr, 200px))] gap-6">
+        {/* Profile Card*/}
+        <div className="col-span-full md:col-span-2 row-span-4 flex flex-col gap-6">
           <ProfileCard
             avatar={picture}
             title={name}
@@ -43,39 +42,36 @@ export default function FriendDetails() {
             bio={bio}
             email={email}
           ></ProfileCard>
-
-          {/* Buttons*/}
-          <button className="btn">
-            <FaBellSlash /> Snooze 2 weeks
-          </button>
-          <button className="btn">
-            <FaBellSlash />
-            <FaBoxArchive /> Archive
-          </button>
-          <button className="btn text-red-500">
-            <FaBellSlash />
-            <MdDeleteOutline /> Delete
-          </button>
         </div>
 
-        {/* Right Panel*/}
-        <div className="col-span-full md:col-span-3 space-y-6">
-          {/* Status Cards*/}
-          <div className="flex gap-6">
-            <StatusCard></StatusCard>
-            <StatusCard></StatusCard>
-            <StatusCard></StatusCard>
-          </div>
+        {/* Buttons*/}
+        <button className="btn col-span-full md:col-span-2 md:col-start-1 md:row-start-5">
+          <FaBellSlash /> Snooze 2 weeks
+        </button>
+        <button className="btn col-span-full md:col-span-2  md:col-start-1 md:row-start-6">
+          <FaBellSlash />
+          <FaBoxArchive /> Archive
+        </button>
+        <button className="btn text-red-500 col-span-full md:col-span-2 md:col-start-1 md:row-start-7">
+          <FaBellSlash />
+          <MdDeleteOutline /> Delete
+        </button>
 
-          {/* Relation goal*/}
-          <div className="col-span-3 row-span-2">
-            <StatusCard></StatusCard>
-          </div>
+        {/* Status Cards*/}
+        <div className=" col-span-full md:col-span-3 row-span-2 flex max-md:flex-col gap-6 ">
+          <StatusCard></StatusCard>
+          <StatusCard></StatusCard>
+          <StatusCard></StatusCard>
+        </div>
 
-          {/* Quick Check Ins*/}
-          <div className="col-span-3 row-span-3">
-            <StatusCard></StatusCard>
-          </div>
+        {/* Relation goal*/}
+        <div className=" col-span-full md:col-span-3 row-span-2 grid items-stretch">
+          <StatusCard></StatusCard>
+        </div>
+
+        {/* Quick Check Ins*/}
+        <div className=" col-span-full md:col-span-3 row-span-3 grid items-stretch">
+          <StatusCard></StatusCard>
         </div>
       </div>
     </section>
