@@ -95,7 +95,12 @@ export default function FriendDetails() {
               <button
                 onClick={() =>
                   handleAddTimeline(
-                    { id, name, time: new Date().toDateString() },
+                    {
+                      id,
+                      name,
+                      interaction: "Called",
+                      time: new Date().toDateString(),
+                    },
                     `Called ${name}`,
                   )
                 }
@@ -109,7 +114,12 @@ export default function FriendDetails() {
               <button
                 onClick={() =>
                   handleAddTimeline(
-                    { id, name, time: new Date().toDateString() },
+                    {
+                      id,
+                      name,
+                      interaction: "Texted",
+                      time: new Date().toDateString(),
+                    },
                     `Text Sent to ${name}`,
                   )
                 }
@@ -123,7 +133,12 @@ export default function FriendDetails() {
               <button
                 onClick={() =>
                   handleAddTimeline(
-                    { id, name, time: new Date().toDateString() },
+                    {
+                      id,
+                      name,
+                      interaction: "Video call",
+                      time: new Date().toDateString(),
+                    },
                     `Video called ${name}`,
                   )
                 }
