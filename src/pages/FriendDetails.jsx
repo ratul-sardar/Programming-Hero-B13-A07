@@ -31,7 +31,7 @@ export default function FriendDetails() {
 
   return (
     <section className="">
-      <div className="w-11/12 mx-auto max-w-360 py-16 md:py-20 grid grid-cols-5 md:grid-rows-[repeat(7, minmax(1fr, 200px))] gap-6">
+      <div className="w-11/12 mx-auto max-w-277.5 py-16 md:py-20 grid grid-cols-5 md:grid-rows-[repeat(7, minmax(1fr, 200px))] gap-6">
         {/* Profile Card*/}
         <div className="col-span-full md:col-span-2 row-span-4 flex flex-col gap-6">
           <ProfileCard
