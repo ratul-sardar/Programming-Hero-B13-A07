@@ -1,4 +1,4 @@
-import call from "../../../assets/call.png";
+import called from "../../../assets/call.png";
 import video from "../../../assets/video.png";
 import text from "../../../assets/text.png";
 
@@ -11,8 +11,8 @@ export default function TimelineCard({ data }) {
         src={
           interaction === "Video call"
             ? video
-            : interaction === "Call"
-              ? call
+            : interaction === "Called"
+              ? called
               : text
         }
         alt="card icon"
