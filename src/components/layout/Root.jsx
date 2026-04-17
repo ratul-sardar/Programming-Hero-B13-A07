@@ -13,9 +13,9 @@ export default function Root() {
       <header className="sticky top-0 z-50 bg-white border-b border-gray-300">
         <Navbar></Navbar>
       </header>
-      <main>
+      <main className="">
         {isNavigating && (
-          <div className="w-screen h-screen flex items-center justify-center">
+          <div className="fixed top-0 left-0 z-50 bg-white w-screen h-screen flex items-center justify-center">
             <LoadingSpinner></LoadingSpinner>
           </div>
         )}
